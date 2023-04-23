@@ -1,10 +1,10 @@
 <?php
 
 function connectToDatabaseServer(){
-    $host = "localhost";
-    $username = "iamthedev";
-    $password = "orenodatabase69";
-    $database = "registration_and_authentication";
+    $host = ""; // localhost for scratch
+    $username = ""; // username of server used
+    $password = ""; // password of server used
+    $database = ""; // name of database
 
     $config = new mysqli($host, $username, $password, $database);
 
