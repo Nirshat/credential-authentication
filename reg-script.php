@@ -8,17 +8,19 @@
     $data = $special_query->fetch_assoc();
     $num_data = $special_query->num_rows;
 
-    do{
-    $all_num_data = "";
-    if($num_data > 0){
-        $all_num_data = $data['ref_num'];
-        // lay out all the data
-    } else{}
-    }while($data = $special_query->fetch_assoc());
+    if($num_data > 0){ // if database has one or more data...
+      do{
+          $all_num_data = $data['ref_num']; // lay out all the data
+      } while($data = $special_query->fetch_assoc());
 
-    do{
-    $num_data += 1;
-    }while($num_data == $all_num_data);
+      do{
+          $num_data += 1;
+      } while($num_data == $all_num_data);
+    }
+
+    else{
+        $num_data += 1;
+    }
     // generate data until it has no duplicate
 
     $checkingstat = "";
